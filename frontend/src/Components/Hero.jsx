@@ -1,4 +1,5 @@
 import { Container, Card, Button } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
 
 import React from "react";
 
@@ -13,12 +14,16 @@ export const Hero = () => {
             demonstrates how to build and store JWT in a HTTP Only cookie.
           </p>
           <div className="d-flex">
-            <Button variant="primary" href="/login" className="me-3">
+            <LinkContainer to="/login" className="me-3 text-decoration-none">
+            <Button variant="primary" className="me-3">
               Log In
             </Button>
-            <Button variant="secondary" href="/register">
+            </LinkContainer>
+            <LinkContainer to="/register" className="text-decoration-none">
+            <Button variant="secondary">
               Sign Up
             </Button>
+            </LinkContainer>
           </div>
         </Card>
       </Container>
