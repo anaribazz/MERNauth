@@ -7,6 +7,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { HomeScreen } from './Screens/HomeScreen.jsx'
 import { LoginScreen } from './Screens/LoginScreen.jsx'
 import { RegisterScreen } from './Screens/RegisterScreen.jsx'
+import store from './store.js';
+import { Provider } from 'react-redux'; //as ReduxProvider 
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -23,8 +25,9 @@ const router = createBrowserRouter(
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
+  <Provider store={store}>
   <React.StrictMode>
     <RouterProvider router={router}/>
-
-  </React.StrictMode>,
+  </React.StrictMode>
+  </Provider>
 )
